@@ -72,45 +72,75 @@ collected_data = []
 
 
 # function for verifying data
-def verify_me(ip, status_code, timestamp, url):
+def verify_me(ip, status_code, timestamp, url, required_severity):
   global critical_ips_number, warning_ips
   if ip in blacklisted_ips_set:
     critical_ips_number += 1
     severity = "Critical"
     Message = "Honeypot IP detected!"
-    collected_data.append([ip, status_code, timestamp, url, severity, Message])
+    if required_severity == 'C':
+      collected_data.append([ip, status_code, timestamp, url, severity, Message])
+    elif required_severity == 'A':
+      collected_data.append([ip, status_code, timestamp, url, severity, Message])
+    else:
+      pass
 
   elif any(pattern in url.lower() for pattern in attack_keywords):
     critical_ips_number += 1
     severity = 'Critical'
     Message = "Malicious IP pattern detected in URL"
-    collected_data.append([ip, status_code, timestamp, url, severity, Message])
+    if required_severity == 'C':
+      collected_data.append([ip, status_code, timestamp, url, severity, Message])
+    elif required_severity == 'A':
+      collected_data.append([ip, status_code, timestamp, url, severity, Message])
+    else:
+      pass
 
   elif (status_code == '500'):
     severity = 'High'
     Message = 'Server Error - Possible Exploit Attempt'
-    collected_data.append([ip, status_code, timestamp, url, severity, Message])
+    if required_severity == 'H':
+      collected_data.append([ip, status_code, timestamp, url, severity, Message])
+    elif required_severity == 'A':
+        collected_data.append([ip, status_code, timestamp, url, severity, Message])
+    else:
+      pass
 
   elif (status_code == '401' and int(failed_logins.get(ip)) > config_app()["max_failed_logins"]):
     severity = 'High'
     Message = 'Brute Force Attempt Detected'
-    collected_data.append([ip, status_code, timestamp, url, severity, Message])
+    if required_severity == 'H':
+      collected_data.append([ip, status_code, timestamp, url, severity, Message])
+    elif required_severity == 'A':
+      collected_data.append([ip, status_code, timestamp, url, severity, Message])
+    else:
+      pass 
 
   elif (status_code in ['401', '403', '404']):
     warning_ips += 1
     severity = 'Warning'
     Message = f'Suspicious Activity ({status_code})'
-    collected_data.append([ip, status_code, timestamp, url, severity, Message])
+    if required_severity == 'W':
+      collected_data.append([ip, status_code, timestamp, url, severity, Message])
+    elif required_severity == 'A':
+      collected_data.append([ip, status_code, timestamp, url, severity, Message])
+    else:
+      pass 
 
   else:
     severity = 'INFO'
     Message = 'Normal Traffic'
-    collected_data.append([ip, status_code, timestamp, url, severity, Message])
+    if required_severity == 'I':
+      collected_data.append([ip, status_code, timestamp, url, severity, Message])
+    elif required_severity == 'A':
+      collected_data.append([ip, status_code, timestamp, url, severity, Message])
+    else:
+      pass 
 
 
 
-def getting_data_from_log(file_destination):
-  with open(file_destination) as log_file:
+def getting_data_from_log(file_destination, required_severity):
+  with open(file_destination, 'r') as log_file:
     for line in log_file:
       list_content = line.split(' ')
       list_content.remove('-')
@@ -126,10 +156,10 @@ def getting_data_from_log(file_destination):
         failed_logins[ip] = failed_logins.get(ip, 0) + 1
 
       # verifying every ip
-      verify_me(ip, status_code, time, url)
+      verify_me(ip, status_code, time, url, required_severity)
         
-def all_main_action(file_path_toscan = 'dummy.log'):
-  getting_data_from_log(file_path_toscan)
+def all_main_action(file_path_toscan = 'dummy.log', required_severity = 'A'):
+  getting_data_from_log(file_path_toscan, required_severity)
   with open('report.csv', 'w', newline='', encoding='utf-8') as report:
     writer = csv.writer(report)
     writer.writerow(headers)

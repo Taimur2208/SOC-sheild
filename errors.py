@@ -31,7 +31,7 @@ def validate_file_destination(file_path: str):
 def validate_severity(severe_level:str):
   clean_severe_level = severe_level.strip().upper()
 
-  all_severity_levels = ["ALL", "WARNING", "HIGH", "CRITICAL"]
+  all_severity_levels = ["A", "W", "H", "C", "I"]
 
   if not clean_severe_level in all_severity_levels:
     raise SeverityError("No match found!! You can try ALL/WARNING/CRITICAL/HIGH.")
