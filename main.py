@@ -1,7 +1,7 @@
+import src.config as srccon
 import src.utiles as ut
 import errors
-from src.config import config_app
-configuration_dict = config_app()
+configuration_dict = srccon.config_app()
 
 def print_msg(NameOfApp, VersionOfApp):
   print('_' * 50)
@@ -11,6 +11,7 @@ def print_msg(NameOfApp, VersionOfApp):
 
 
 def main():
+  ut.blacklisted_ips_set
   app_name = configuration_dict.get('app_name')
   app_version = configuration_dict.get('version')
 
@@ -29,17 +30,27 @@ def main():
         print('Access Granted')
         try:
           file_destination = input('Enter the destination of log file you want to inspect:')
+          errors.validate_file_destination(file_destination)
+        except Exception as e:
+          print(e)
+        else:
           if (file_destination == 'q'):
               print("Thanks for using SOC-Sheild")
               break
-        except FileNotFoundError:
-          print('The file you want to scan, doesnot exist!!')
-    
-    
-    serverity = input('Severity(ALL/WARNINGS/CRITICALS):')
-    if (serverity == 'q'):
-          print("Thanks for using SOC-Sheild")
-          break
+          else:
+            try:
+              serverity = input('Severity(ALL/WARNINGS/CRITICALS):')
+              errors.validate_severity(serverity)
+            except Exception as e:
+              print(e)
+            else:
+              if (serverity == 'q'):
+                print("Thanks for using SOC-Sheild")
+                break
+              else:
+                ut.all_main_action(file_destination)
+
 
 if __name__ == '__main__':
+  blackListed_ips = ut.blacklisted_ips_set
   main()

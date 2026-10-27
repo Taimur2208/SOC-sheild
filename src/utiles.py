@@ -1,7 +1,8 @@
 import os
+from .config import config_app
 import csv
 import urllib.request
-from config import config_app
+
 def fetch_honeypot_ips(file_path="/home/taimur/Coding Areana/Python Learning Hub/SOC-sheild/blackIPs.txt"):
   """Fetches malicious IPs from online threat feed. Falls back to a local text file if offline. """
   url = "https://raw.githubusercontent.com/stamparm/ipsum/master/ipsum.txt"
@@ -127,9 +128,12 @@ def getting_data_from_log(file_destination):
       # verifying every ip
       verify_me(ip, status_code, time, url)
         
+def all_main_action(file_path_toscan = 'dummy.log'):
+  getting_data_from_log(file_path_toscan)
+  with open('report.csv', 'w', newline='', encoding='utf-8') as report:
+    writer = csv.writer(report)
+    writer.writerow(headers)
+    writer.writerows(collected_data)
+  print('Report Generated Successfully in excel file: report.csv')
 
-getting_data_from_log('dummy.log')
-with open('report.csv', 'w', newline='', encoding='utf-8') as report:
-  writer = csv.writer(report)
-  writer.writerow(headers)
-  writer.writerows(collected_data)
+
