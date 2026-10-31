@@ -53,9 +53,9 @@ failed_logins = {}
 # headers for csv file
 headers = [ 
   "Client IP", 
+  "Status Code",
   "Timestamp",
   "Requested URL",
-  "Status Code",
   "Severity",
   "Threat Message",
   ]
