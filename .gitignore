@@ -1,3 +1,7 @@
 __pycache__/
-.env
-incidents_report.csv
+*.pyc
+server_access.log
+report.csv
+.vscode/
+.idea/
+.DS_Store
